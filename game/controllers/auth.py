@@ -12,7 +12,7 @@ from odoo.addons.core.controllers import auth
 VALIDATOR = r"^[0-9]+$"
 
 
-class AuthGame(auth.AuthDentaliaService):
+class AuthGame(auth.AuthCoreService):
 
     def is_valid_email(self, email):
         result = super(AuthGame, self).is_valid_email(email)

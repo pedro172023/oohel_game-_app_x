@@ -16,7 +16,7 @@ except ImportError:
 _logger = logging.getLogger(__name__)
 
 
-class AuthCoreervice(Controller):
+class AuthCoreService(Controller):
     """ Autenticación de usuarios de interfaces """
 
     @route('/api/v1/login/', method=['POST'], cors='*', csrf=False, auth="none", type="http", website=False)
