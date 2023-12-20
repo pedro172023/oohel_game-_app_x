@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="oohel_clave_server_fcm" model="ir.config_parameter">
+            <field name="key">oohel.clave_server_fcm</field>
+            <field name="value">AAAAMce_v3o:APA91bFQg-X1ULro8W021CQRPxBoFY0Zix_mGCrYo8Uyq73CzfXtszgrjVmhyknJUBTw0RaOhTRXn05-8qZbnSMWisytatJz_s7DUjNZmYIgPuikjeGFEveGG1O_kMnAMWuLm29tpev5</field>
+        </record>
+
+        <record id="oohel_url_send_fcm" model="ir.config_parameter">
+            <field name="key">oohel.url_send_fcm</field>
+            <field name="value">https://fcm.googleapis.com/fcm/send</field>
+        </record>
+    </data>
+</odoo>

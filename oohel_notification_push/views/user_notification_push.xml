@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oohel_user_notification_push_form_view">
+            <field name="name">oohel_user_notification_push_form_view</field>
+            <field name="model">oohel.user_notification_push</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <field name="res_model"/>
+                            <field name="res_id"/>
+                            <field name="title"/>
+                            <field name="app"/>
+                            <field name="message"/>
+                            <field name="create_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="oohel_user_notification_push_tree_view">
+            <field name="name">oohel_user_notification_push_tree_view</field>
+            <field name="model">oohel.user_notification_push</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <field name="title"/>
+                    <field name="app"/>
+                    <field name="message"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oohel_user_notification_push_action">
+            <field name="name">Notificaciones a usuarios</field>
+            <field name="res_model">oohel.user_notification_push</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

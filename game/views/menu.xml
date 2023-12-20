@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="app_root"
+                  name="App"
+                  web_icon="core,static/description/icon.png"
+        />
+
+        <menuitem id="notifications_push_menu_root"
+                  name="Notificaciones push"
+                  parent="app_root"
+                  action="oohel_notification_push.oohel_notification_push_action"
+                  sequence="150"
+        />
+
+        <menuitem id="oohel_notification_user_menu"
+                  name="Notificaciones enviadas"
+                  parent="notifications_push_menu_root"
+                  action="oohel_notification_push.oohel_user_notification_push_action"
+                  sequence="20"
+        />
+
+        <menuitem id="tokens_push_menu_root"
+                  name="Tokens"
+                  parent="app_root"
+                  action="oohel_notification_push.oohel_notification_push_action"
+                  sequence="150"
+        />
+
+        <menuitem id="oohel_tokens_notifications_menu"
+                  name="Tokens de notificaciones"
+                  parent="tokens_push_menu_root"
+                  action="oohel_notification_push.oohel_notification_push_action"
+                  sequence="10"
+        />
+
+    </data>
+</odoo>

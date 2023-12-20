@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oohel_segmento_notification_push_form_view">
+            <field name="name">oohel_segmento_notification_push_form_view</field>
+            <field name="model">oohel.segmento_notification_push</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="res_model_id" required="True" options="{'no_quick_create':True , 'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="oohel_segmento_notification_push_tree_view">
+            <field name="name">oohel_segmento_notification_push_tree_view</field>
+            <field name="model">oohel.segmento_notification_push</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="True"/>
+                    <field name="res_model_id" required="True" options="{'no_quick_create':True , 'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oohel_segmento_notification_push_action">
+            <field name="name">Notificaciones Tokens Devices</field>
+            <field name="res_model">oohel.segmento_notification_push</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

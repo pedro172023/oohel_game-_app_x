@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oohel_notification_push_form_view">
+            <field name="name">oohel_notification_push_form_view</field>
+            <field name="model">oohel.notification_push</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="res_model" readonly="1"/>
+                            <field name="res_id" readonly="1"/>
+                            <field name="token" readonly="1"/>
+                            <field name="app" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="oohel_notification_push_tree_view">
+            <field name="name">oohel_notification_push_tree_view</field>
+            <field name="model">oohel.notification_push</field>
+            <field name="arch" type="xml">
+                <tree create="false">
+                     <field name="res_model" readonly="1"/>
+                     <field name="res_id" readonly="1"/>
+                     <field name="token" readonly="1"/>
+                     <field name="app" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oohel_notification_push_action">
+            <field name="name">Notificaciones Tokens Devices</field>
+            <field name="res_model">oohel.notification_push</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

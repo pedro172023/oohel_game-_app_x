@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oohel_aviso_notification_push_form_view">
+            <field name="name">oohel_aviso_notification_push_form_view</field>
+            <field name="model">oohel.aviso_notification_push</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <button class="btn btn-primary" name="send_notification_aviso"
+                                    string="Enviar Notificación"
+                                    type="object"
+                                    attrs="{'invisible': [('visible','=', '1')]}"/>
+                        </div>
+                        <group>
+                            <field name="dirigido_users" required="1" options="{'no_quick_create':True , 'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                            <field name="name" required="1"/>
+                            <field name="descripcion" required="1"/>
+                            <field name="fecha_publicacion" required="1"/>
+                            <field name="visible"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="oohel_aviso_notification_push_tree_view">
+            <field name="name">oohel_aviso_notification_push_tree_view</field>
+            <field name="model">oohel.aviso_notification_push</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" decoration-danger="visible=='1'" decoration-info ="visible=='2'">
+                    <field name="name" required="1"/>
+                    <field name="descripcion" required="1"/>
+                    <field name="dirigido_users" required="1" widget="many2many_tags"  options="{'no_quick_create':True , 'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                    <field name="fecha_publicacion" required="1"/>
+                    <field name="visible" required="True"/>
+                    <button class="btn btn-primary" name="send_notification_aviso"
+                                    string="Enviar notificación"
+                                    type="object"
+                                    attrs="{'invisible': [('visible','=', '1')]}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oohel_aviso_notification_push_action">
+            <field name="name">Avisos</field>
+            <field name="res_model">oohel.aviso_notification_push</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

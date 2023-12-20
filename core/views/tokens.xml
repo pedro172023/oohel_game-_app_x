@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="core_tokens_view_tree" model="ir.ui.view">
+            <field name="name">core_tokens_view_tree</field>
+            <field name="model">core.tokens</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="usuario_id"/>
+                    <field name="fecha_login"/>
+                    <field name="fecha_expiracion"/>
+                    <field name="is_expired"/>
+                </tree>
+            </field>
+        </record>
+        <record id="core_tokens_view_form" model="ir.ui.view">
+            <field name="name">core_tokens_view_form</field>
+            <field name="model">core.tokens</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="usuario_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="usuario_id" placeholder="Usuario" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="fecha_login" readonly="1"/>
+                            <field name="fecha_expiracion" readonly="1"/>
+                            <field name="is_expired" widget="boolean_toggle"/>
+                            <field name="ip_address" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page name="page_token" string="Token de acceso">
+                                <group>
+                                    <field name="token" nolabel="1" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="core_tokens_action" model="ir.actions.act_window">
+            <field name="name">Tokens de acceso</field>
+            <field name="res_model">core.tokens</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    Sin datos para mostrar
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
