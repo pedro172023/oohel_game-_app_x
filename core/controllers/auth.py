@@ -5,7 +5,7 @@
 """
 import logging
 from odoo.http import Controller, route, request
-from odoo.addons.dentalia.libs.response import makeResponse, badRequest, incorrectToken, validate_token, STATES
+from odoo.addons.core.libs.response import makeResponse, badRequest, incorrectToken, validate_token, STATES
 
 try:
     from validate_email import validate_email
@@ -16,7 +16,7 @@ except ImportError:
 _logger = logging.getLogger(__name__)
 
 
-class AuthDentaliaService(Controller):
+class AuthCoreervice(Controller):
     """ Autenticación de usuarios de interfaces """
 
     @route('/api/v1/login/', method=['POST'], cors='*', csrf=False, auth="none", type="http", website=False)
@@ -32,9 +32,9 @@ class AuthDentaliaService(Controller):
             "message": "Login",
             "data": {
                 "data": {
-                    "email": "interfaces@dentalia.com",
+                    "email": "interfaces@core.com",
                     "uid": 391,
-                    "login": "interfaces@dentalia.com",
+                    "login": "interfaces@core.com",
                     "context": {
                         "lang": "es_MX",
                         "tz": "America/Mexico_City",
@@ -90,7 +90,7 @@ class AuthDentaliaService(Controller):
                         del data['context']
                         del data['geoip']
                         ip_address = request.httprequest.environ['REMOTE_ADDR']
-                        token = request.env['dentalia.tokens'].create_token(data, ip_address)
+                        token = request.env['core.tokens'].create_token(data, ip_address)
                         return makeResponse(state=STATES['SUCCESS'],
                                             data={
                                                 'data': data,

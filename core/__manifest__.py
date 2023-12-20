@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Oohel - Dentalia",
+    'name': "Oohel - App",
     'summary': """
-      Módulo core de dentalia
+      Módulo core de app
     """,
     'description': """
        Se crean los modelos de catálogos que se actualizan desde el ERP a Dentalia y viceversa. 

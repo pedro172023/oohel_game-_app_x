@@ -8,7 +8,7 @@ from odoo.http import request
 _logger = logging.getLogger(__name__)
 
 try:
-    from odoo.addons.dentalia.libs.response import valid_token, makeResponse, STATES
+    from odoo.addons.core.libs.response import valid_token, makeResponse, STATES
 except ImportError as ee:
     _logger.error("Error al importar el modulo de post_covid_libs, por favor revise el path")
 
