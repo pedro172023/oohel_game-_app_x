@@ -5,6 +5,4 @@
 """
 from . import auth
 from . import main
-from . import tickets
-from . import mnt_activities
 from . import notification_push
