@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="oohel_wizard_asignar_puntos_view_form" model="ir.ui.view">
-            <field name="name">oohel_wizard_asignar_puntos_view_form</field>
+        <record id="oohel_wizard_registrar_pregunta_view_form" model="ir.ui.view">
+            <field name="name">oohel_wizard_registrar_pregunta_view_form</field>
             <field name="model">oohel.wizard_registrar_pregunta</field>
             <field name="arch" type="xml">
                 <form string="Registrar Pregunta">
@@ -25,7 +25,7 @@
             <field name="res_model">oohel.wizard_registrar_pregunta</field>
             <field name="binding_model_id" eval="False"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="oohel_wizard_asignar_puntos_view_form"/>
+            <field name="view_id" ref="oohel_wizard_registrar_pregunta_view_form"/>
             <field name="target">new</field>
             <field name="binding_view_types">form</field>
         </record>
