@@ -5,7 +5,7 @@
       Módulo core de app
     """,
     'description': """
-       Se crean los modelos de catálogos que se actualizan desde el ERP a Dentalia y viceversa. 
+       app. 
     """,
     'author': "",
     'website': "http://oohel.net/",
