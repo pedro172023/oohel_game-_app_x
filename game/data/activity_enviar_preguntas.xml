@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="send_oohel_pregunta_game_to_users" model="ir.cron">
+            <field name="name">Enviar Preguntas</field>
+            <field name="model_id" ref="model_oohel_pregunta_game"/>
+            <field name="state">code</field>
+            <field name="code">model.send_preguntas_game_to_users()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hour</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+            <field name="nextcall">2023-12-21 09:00:00</field>
+        </record>
+    </data>
+</odoo>

@@ -39,6 +39,12 @@
                   action="oohel_wizard_asignar_puntos_act_window"
                   sequence="20"
         />
+        <menuitem id="oohel_registrar_pregunta_menu"
+                  name="Registrar preguntas"
+                  parent="app_root"
+                  action="oohel_wizard_registrar_pregunta_act_window"
+                  sequence="20"
+        />
 
     </data>
 </odoo>
