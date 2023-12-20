@@ -11,8 +11,14 @@ class WizardRegistrarPregunta(models.TransientModel):
     pregunta = fields.Char(
         string='Pregunta',
     )
+
     respuesta = fields.Char(
         string='Respuesta'
+    )
+
+    dinero_ficticio = fields.Integer(
+        string='Dinero ficticio',
+        default=30
     )
 
     def registrar_pregunta(self):
@@ -23,4 +29,5 @@ class WizardRegistrarPregunta(models.TransientModel):
         self.env['oohel.pregunta_game'].create({
             'pregunta': self.pregunta,
             'respuesta': self.respuesta,
+            'dinero_ficticio': self.dinero_ficticio
         })

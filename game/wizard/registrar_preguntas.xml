@@ -9,6 +9,7 @@
                     <group>
                         <field name="pregunta" required="1"/>
                         <field name="respuesta" required="1"/>
+                        <field name="dinero_ficticio" required="1"/>
                     </group>
                     <footer>
                         <button string="Registrar"
