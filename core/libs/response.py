@@ -8,13 +8,14 @@ import json
 from odoo.http import request, Response
 import logging
 
-headers_response = [
-    ("Access-Control-Allow-Origin", "*"),
-    ('Content-Type', 'application/json'),
-    ('Access-Control-Allow-Methods', "GET,POST,PUT,PATCH"),
-    ("Access-Control-Allow-Credentials", "true"),
-    ("Access-Control-Allow-Headers", "Authorization")
-]
+# headers_response = [
+#     ("Access-Control-Allow-Origin", "*"),
+#     ('Content-Type', 'application/json'),
+#     ('Access-Control-Allow-Methods', "GET,POST,PUT,PATCH"),
+#     ("Access-Control-Allow-Credentials", "true"),
+#     ("Access-Control-Allow-Headers", "Authorization")
+# ]
+headers_response = []
 STATES = dict(
     BAD_REQUEST=400,
     UNAUTHORIZED=401,
