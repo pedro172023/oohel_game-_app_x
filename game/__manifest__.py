@@ -10,7 +10,8 @@
     'depends': [
         'jsonifier',
         'maintenance',
-        'oohel_notification_push'
+        'oohel_notification_push',
+        'core'
     ],
     'data': [
         'views/menu.xml'
