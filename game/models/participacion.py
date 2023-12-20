@@ -22,6 +22,17 @@ class Participaciones(models.Model):
         string='¿Es una respuesta correcta?',
         default=False
     )
-    puntos = fields.Char(
-
+    puntos = fields.Integer(
+        string='Puntos',
+        default=0
     )
+    def send_notificacion(self):
+        title = "Actividad " + str(self.pregunta_id.pregunta)
+        message = f'Estimado {self.user_id.name} se ha activado la actividad {self.pregunta_id.pregunta} registra tu respuesta',
+        model_notifications_push = self.env['oohel.notification_push']
+        if self.user_id:
+            try:
+                request = model_notifications_push.send_notifications_to_users(['user'], self.user_id.ids, title, message, 'game')
+                return request
+            except Exception as e:
+                print(e)
