@@ -33,6 +33,12 @@
                   action="oohel_notification_push.oohel_notification_push_action"
                   sequence="10"
         />
+        <menuitem id="oohel_asignar_puntos_menu"
+                  name="Asignar Puntos"
+                  parent="app_root"
+                  action="oohel_wizard_asignar_puntos_act_window"
+                  sequence="20"
+        />
 
     </data>
 </odoo>

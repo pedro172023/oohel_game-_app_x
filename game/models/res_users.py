@@ -10,10 +10,15 @@ class ResUsers(models.Model):
     """"""
     _inherit='res.users'
 
+    participante_x = fields.Boolean(
+        string='Participante X',
+    )
+
     saldo = fields.Float(
         string='Saldo',
     )
-    operacion_ids = fields.One2Many(
+
+    operacion_ids = fields.One2many(
         comodel_name='oohel.operacion_game',
         inverse_name='user_id',
         string='Operaciones game'
@@ -21,4 +26,4 @@ class ResUsers(models.Model):
 
     def get_saldo(self):
         """Suma de las operaciones del usuario."""
-        return sum(self.operacion_ids.mapped.dinero_ficticio)
+        return sum(self.operacion_ids.mapped('dinero_ficticio'))

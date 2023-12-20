@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 admin_access_operacion_game,Acceso al modelo de Operacion,model_oohel_operacion_game,base.group_system,1,1,1,1
+admin_wizard_asignar_puntos,Acceso al wizard de puntos,model_oohel_wizard_asignar_puntos,base.group_system,1,1,1,1

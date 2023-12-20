@@ -15,6 +15,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'views/user.xml',
+        'wizard/asignacion_puntos.xml',
         'views/menu.xml'
     ],
     'demo': [
