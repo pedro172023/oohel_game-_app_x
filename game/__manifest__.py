@@ -1,5 +1,5 @@
 {
-    'name': 'Gamer',
+    'name': 'Game',
     'version': '14.0.1',
     'summary': 'Servicios para la aplicación game.',
     'description': 'Servicios para la aplicación game',
