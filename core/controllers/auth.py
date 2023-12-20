@@ -88,7 +88,6 @@ class AuthCoreService(Controller):
                         del data['db']
                         del data['debug']
                         del data['context']
-                        del data['geoip']
                         ip_address = request.httprequest.environ['REMOTE_ADDR']
                         token = request.env['core.tokens'].create_token(data, ip_address)
                         return makeResponse(state=STATES['SUCCESS'],
