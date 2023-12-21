@@ -51,6 +51,11 @@
                   action="oohel_premio_action"
                   sequence="300"
         />
-
+        <menuitem id="oohel_asignar_premio_menu"
+                  name="Asignar premio"
+                  parent="app_root"
+                  action="oohel_wizard_asignar_premios_act_window"
+                  sequence="220"
+        />
     </data>
 </odoo>

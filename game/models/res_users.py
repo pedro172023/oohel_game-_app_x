@@ -10,7 +10,7 @@ import base64
 
 class ResUsers(models.Model):
     """"""
-    _inherit='res.users'
+    _inherit = 'res.users'
 
     participante_x = fields.Boolean(
         string='Participante X',
@@ -28,7 +28,11 @@ class ResUsers(models.Model):
 
     def get_saldo(self):
         """Suma de las operaciones del usuario."""
-        return sum(self.operacion_ids.mapped('dinero_ficticio'))
+        dinero_ficticio_por_operacion = sum(self.operacion_ids.mapped('dinero_ficticio'))
+        cantidad_premios = sum(
+            self.env['oohel.premio'].search([('user_id', '=', self.id)]).mapped('puja_maxima_empleado'))
+        total = dinero_ficticio_por_operacion - cantidad_premios
+        return total
 
     def get_premios(self):
         premios = []

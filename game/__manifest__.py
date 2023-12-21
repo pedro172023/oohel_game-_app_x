@@ -20,6 +20,7 @@
         'views/user.xml',
         'wizard/asignacion_puntos.xml',
         'wizard/registrar_preguntas.xml',
+        'wizard/asignacion_de_premios.xml',
         'views/premio.xml',
         'views/menu.xml'
     ],

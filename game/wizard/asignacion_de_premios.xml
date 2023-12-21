@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oohel_wizard_asignar_premios_view_form" model="ir.ui.view">
+            <field name="name">oohel_wizard_asignar_premios_view_form</field>
+            <field name="model">oohel.wizard_asignar_premios</field>
+            <field name="arch" type="xml">
+                <form string="Asignar Puntos">
+                    <div class="oe_title">
+                        <label for="premio_id" class="oe_edit_only"/>
+                        <h1>
+                            <field name="premio_id" placeholder="Selecciona un premio" required="1" widget="selection"
+                                   domain="[('user_id','=',False)]"/>
+                        </h1>
+                    </div>
+                    <group class="col-4">
+                        <field name="user_id" widget="selection" domain="[('participante_x', '=', True)]" required="1"/>
+                        <field name="puja_maxima_empleado" required="1"/>
+                    </group>
+                    <footer>
+                        <button string="Asignar"
+                                icon="fa-user"
+                                name="asignar" type="object"
+                                class="btn btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="oohel_wizard_asignar_premios_act_window" model="ir.actions.act_window">
+            <field name="name">Asignar Premios</field>
+            <field name="res_model">oohel.wizard_asignar_premios</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="oohel_wizard_asignar_premios_view_form"/>
+            <field name="target">new</field>
+            <field name="binding_view_types">form</field>
+        </record>
+    </data>
+</odoo>

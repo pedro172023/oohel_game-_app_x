@@ -31,3 +31,6 @@ class OohelPremio(models.Model):
         string='Sequence',
         default=0
     )
+    puja_maxima_empleado = fields.Integer(
+        string='Puja máxima del empleado'
+    )
