@@ -6,6 +6,7 @@
             <field name="model">oohel.premio</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="sequence" widget="handle"/>
                     <field name="premio"/>
                     <field name="minimo_puja"/>
                     <field name="maximo_puja"/>

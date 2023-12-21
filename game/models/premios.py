@@ -6,6 +6,7 @@ class OohelPremio(models.Model):
     _name = 'oohel.premio'
     _description = 'Oohel - Premio'
     _rec_name = 'premio'
+    _order = 'sequence'
 
     user_id = fields.Many2one(
         comodel_name='res.users',
@@ -24,4 +25,9 @@ class OohelPremio(models.Model):
     )
     image = fields.Binary(
         string='Imagen',
+    )
+
+    sequence = fields.Integer(
+        string='Sequence',
+        default=0
     )
