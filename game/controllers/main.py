@@ -80,15 +80,15 @@ class MainControllerCoreApp(Controller):
                         'respuesta': post.get('respuesta'),
                         'correcta': correcto
                     })
-                if correcto:
-                    operacion_user = request.env['oohel.operacion_game'].sudo().create({
-                        'titulo': 'Ganador de pregunta rapida',
-                        'user_id': user.id,
-                        'dinero_ficticio': pregunta.dinero_ficticio
-                    })
-                    mensaje = 'Felicidades, has ganado $' + str(pregunta.dinero_ficticio)
-                else:
-                    mensaje = 'Respuesta incorrecta, Gracias por participar'
+                    if correcto:
+                        operacion_user = request.env['oohel.operacion_game'].sudo().create({
+                            'titulo': 'Ganador de pregunta rapida',
+                            'user_id': user.id,
+                            'dinero_ficticio': pregunta.dinero_ficticio
+                        })
+                        mensaje = 'Felicidades, has ganado $' + str(pregunta.dinero_ficticio)
+                    else:
+                        mensaje = 'Respuesta incorrecta, Gracias por participar'
         else:
             mensaje = 'La pregunta no está activa y no puedes responderla'
         return JsonResponse(
