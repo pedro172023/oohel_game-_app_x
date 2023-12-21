@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-admin_access_operacion_game,Acceso al modelo de Operacion,model_oohel_operacion_game,base.group_system,1,1,1,1
-admin_wizard_asignar_puntos,Acceso al wizard de puntos,model_oohel_wizard_asignar_puntos,base.group_system,1,1,1,1
-admin_access_modelo_preguntas,Acceso al modelo de preguntas,model_oohel_pregunta_game,base.group_system,1,1,1,1
-admin_access_wizard_registrar_pregunta,Acceso al wizard de preguntas,model_oohel_wizard_registrar_pregunta,base.group_system,1,1,1,1
-admin_access,Acceso al modelo de participaciones,model_oohel_participacion_game,base.group_system,1,1,1,1
+admin_access_operacion_game,Acceso al modelo de Operacion,model_oohel_operacion_game,,1,1,1,1
+admin_wizard_asignar_puntos,Acceso al wizard de puntos,model_oohel_wizard_asignar_puntos,,1,1,1,1
+admin_access_modelo_preguntas,Acceso al modelo de preguntas,model_oohel_pregunta_game,,1,1,1,1
+admin_access_wizard_registrar_pregunta,Acceso al wizard de preguntas,model_oohel_wizard_registrar_pregunta,,1,1,1,1
+admin_access,Acceso al modelo de participaciones,model_oohel_participacion_game,,1,1,1,1
