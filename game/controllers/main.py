@@ -67,7 +67,7 @@ class MainControllerCoreApp(Controller):
     @valid_token
     def set_update_pregunta(self, pregunta_id=None, **post):
         mensaje = ''
-        maximo_ganadores = 2
+        maximo_ganadores = 5
         logger.info(post)
         user = post['token']['usuario_id']
         del post['token']
