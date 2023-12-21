@@ -9,7 +9,6 @@
     'license': 'GPL-3',
     'depends': [
         'jsonifier',
-        'maintenance',
         'oohel_notification_push',
         'core'
     ],
