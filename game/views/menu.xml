@@ -45,6 +45,12 @@
                   action="oohel_wizard_registrar_pregunta_act_window"
                   sequence="210"
         />
+        <menuitem id="oohel_premios_menu"
+                  name="Premios"
+                  parent="app_root"
+                  action="oohel_premio_action"
+                  sequence="300"
+        />
 
     </data>
 </odoo>

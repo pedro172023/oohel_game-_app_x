@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oohel_premio_view_tree" model="ir.ui.view">
+            <field name="name">oohel_premio_view_tree</field>
+            <field name="model">oohel.premio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="premio"/>
+                    <field name="minimo_puja"/>
+                    <field name="maximo_puja"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="oohel_premio_view_form" model="ir.ui.view">
+            <field name="name">oohel_premio_view_form</field>
+            <field name="model">oohel.premio</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <h1><field name="premio" required="1"/></h1>
+                        </div>
+                        <group>
+                            <field name="minimo_puja" required="1"/>
+                            <field name="maximo_puja" required="1"/>
+                            <field name="user_id" readonly="1" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="oohel_premio_action" model="ir.actions.act_window">
+            <field name="name">Premios</field>
+            <field name="res_model">oohel.premio</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

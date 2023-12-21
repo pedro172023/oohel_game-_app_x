@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class OohelPremio(models.Model):
     _name = 'oohel.premio'
     _description = 'Oohel - Premio'
+    _rec_name = 'premio'
 
     user_id = fields.Many2one(
         comodel_name='res.users',
@@ -20,4 +21,7 @@ class OohelPremio(models.Model):
     maximo_puja = fields.Integer(
         string='Puja máxima',
         default=1600
+    )
+    image = fields.Binary(
+        string='Imagen',
     )

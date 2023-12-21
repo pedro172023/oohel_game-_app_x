@@ -26,6 +26,17 @@ class MainControllerCoreApp(Controller):
             data=saldo,
         )
 
+    @route('/api/v1/premios', method=['GET'], cors='*', csrf=False, auth="none", type="http", website=False)
+    @valid_token
+    def get_premios(self, **post):
+        user = post['token']['usuario_id']
+        premios = user.get_premios()
+        return makeResponse(
+            state=STATES['SUCCESS'],
+            message='Premios',
+            data=premios,
+        )
+
     @route('/api/v1/pregunta', method=['GET'], cors='*', csrf=False, auth="none", type="http", website=False)
     @valid_token
     def get_pregunta_activa(self, **post):
