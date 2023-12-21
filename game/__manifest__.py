@@ -15,7 +15,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'data/activity_enviar_preguntas.xml',
+        'data/activity_enviar_preguntas_accion_uno.xml',
+        'data/accion_dos_activity_enviar_preguntas.xml',
         'views/user.xml',
         'wizard/asignacion_puntos.xml',
         'wizard/registrar_preguntas.xml',
