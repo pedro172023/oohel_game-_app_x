@@ -56,7 +56,7 @@ class MainControllerCoreApp(Controller):
     @valid_token
     def set_update_pregunta(self, pregunta_id=None, **post):
         mensaje = ''
-        maximo_ganadores = 5
+        maximo_ganadores = 2
         logger.info(post)
         user = post['token']['usuario_id']
         del post['token']
@@ -70,7 +70,7 @@ class MainControllerCoreApp(Controller):
                 mensaje = 'Ya has respondido esta pregunta'
             else:
                 numero_participantes = len(pregunta.participacion_ids.filtered(lambda x: x.correcta == True))
-                if numero_participantes > maximo_ganadores:
+                if numero_participantes >= maximo_ganadores:
                     mensaje = f'Ya no puedes participar, por que ya existen {maximo_ganadores} ganadores'
                 else:
                     correcto = True if post.get('respuesta').lower() == pregunta.respuesta.lower() else False

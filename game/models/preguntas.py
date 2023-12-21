@@ -34,28 +34,15 @@ class PreguntaGame(models.Model):
         string='Operaciones'
     )
 
-    def send_notificacion(self):
-        users = self.env['res.users'].search([('participante_x', '=', True)])
-        for user_id in users:
-            title = "Actividad de preguntas rapidas activa, ganan los primeros 5 lugares"
-            message = f'Estimado {user_id.name}, se ha actividad la pregunta rapida {self.pregunta} para ganar ${self.dinero_ficticio} pesos ficticios, !!Suerte!!.',
-            model_notifications_push = self.env['oohel.notification_push']
-            if user_id:
-                try:
-                    request = model_notifications_push.send_notifications_to_users(['user'], user_id.ids, title,
-                                                                                   message, 'game')
-                    return request
-                except Exception as e:
-                    print(e)
+
 
     def send_preguntas_game_to_users(self,accion):
         """"""
-        print('-----------------------------------------')
         user_tz = self.env.user.tz or 'America/Mexico_City'
         local = pytz.timezone(user_tz)
         today =  pytz.utc.localize(datetime.today()).astimezone(local).strftime('%Y-%m-%d %H:%M:%S')
         fecha_inicio = '2023-12-21 09:00:00'
-        fecha_fin = '2023-12-21 20:59:59'
+        fecha_fin = '2023-12-21 18:59:59'
 
         if today>= fecha_inicio and today<= fecha_fin:
             preguntas_activas = self.env['oohel.pregunta_game'].search([('activo', '=', True)])
@@ -64,18 +51,8 @@ class PreguntaGame(models.Model):
                     'active': False
                 })
             preguntas_sin_activar = self.env['oohel.pregunta_game'].search([('activo', '=', False)])
-            if len(preguntas_sin_activar) == 0:
-                _logger.info('No existen preguntas por enviar, Registre preguntas para seguir participando.')
-            else:
-                pregunta_aleatoria_id = random.choice(preguntas_sin_activar.ids)
-                pregunta_aleatoria = self.env['oohel.pregunta_game'].browse(pregunta_aleatoria_id)
-                print(pregunta_aleatoria)
-                pregunta_aleatoria.write({
-                    'activo': True
-                })
-                pregunta_aleatoria.send_notificacion()
-            # tiempos=[30,35,40,45,50,55,60]
-            tiempos = [1,2,4,3]
+            tiempos=[30,35,40,45,50,55,60]
+            # tiempos = [1,2,4,3]
             minutos = random.choice(tiempos)
             proxima_ejecucion = datetime.now() + timedelta(minutes=minutos)
             if accion == 'accion_uno':
@@ -88,5 +65,26 @@ class PreguntaGame(models.Model):
                     'numbercall': 1,
                     'nextcall': proxima_ejecucion
                 })
+            if len(preguntas_sin_activar) == 0:
+                _logger.info('No existen preguntas por enviar, Registre preguntas para seguir participando.')
+            else:
+                pregunta_aleatoria_id = random.choice(preguntas_sin_activar.ids)
+                pregunta_aleatoria = self.env['oohel.pregunta_game'].browse(pregunta_aleatoria_id)
+                pregunta_aleatoria.write({
+                    'activo': True
+                })
+                users = self.env['res.users'].sudo().search([('participante_x', '=', True)])
+
+                title = "Actividad de preguntas rapidas activa, ganan los primeros 5 lugares"
+                message = f'se ha activado la pregunta rapida {pregunta_aleatoria.pregunta} para ganar ${pregunta_aleatoria.dinero_ficticio} pesos ficticios, !!Suerte!!.',
+                model_notifications_push = self.env['oohel.notification_push']
+                if users:
+                    try:
+                        request = model_notifications_push.send_notifications_to_users(['user'], users.ids, title,
+                                                                                       message, 'game')
+                        return request
+                    except Exception as e:
+                        print(e)
+
 
 
