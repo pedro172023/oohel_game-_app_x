@@ -4,3 +4,4 @@ admin_wizard_asignar_puntos,Acceso al wizard de puntos,model_oohel_wizard_asigna
 admin_access_modelo_preguntas,Acceso al modelo de preguntas,model_oohel_pregunta_game,,1,1,1,1
 admin_access_wizard_registrar_pregunta,Acceso al wizard de preguntas,model_oohel_wizard_registrar_pregunta,,1,1,1,1
 admin_access,Acceso al modelo de participaciones,model_oohel_participacion_game,,1,1,1,1
+admin_access_model_premios,Acceso al modelo de premios,model_oohel_premio,,1,1,1,1
