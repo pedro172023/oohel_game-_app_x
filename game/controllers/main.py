@@ -82,10 +82,11 @@ class MainControllerCoreApp(Controller):
                     })
                     if correcto:
                         operacion_user = request.env['oohel.operacion_game'].sudo().create({
-                            'titulo': 'Ganador de pregunta rapida',
+                            'titulo': 'Ganador de una pregunta rapida',
                             'user_id': user.id,
                             'dinero_ficticio': pregunta.dinero_ficticio
                         })
+                        operacion_user.send_notificacion()
                         mensaje = 'Felicidades, has ganado $' + str(pregunta.dinero_ficticio)
                     else:
                         mensaje = 'Respuesta incorrecta, Gracias por participar'

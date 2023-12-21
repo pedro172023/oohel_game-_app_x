@@ -76,7 +76,7 @@ class PreguntaGame(models.Model):
                 users = self.env['res.users'].sudo().search([('participante_x', '=', True)])
 
                 title = "Actividad de preguntas rapidas activa, ganan los primeros 5 lugares"
-                message = f'se ha activado la pregunta rapida {pregunta_aleatoria.pregunta} para ganar ${pregunta_aleatoria.dinero_ficticio} pesos ficticios, !!Suerte!!.',
+                message = f'Se ha activado la pregunta rapida {pregunta_aleatoria.pregunta} para ganar ${pregunta_aleatoria.dinero_ficticio} pesos ficticios, !!Suerte!!.'
                 model_notifications_push = self.env['oohel.notification_push']
                 if users:
                     try:
